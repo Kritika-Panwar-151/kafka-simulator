@@ -220,3 +220,27 @@ html {
     font-size: 15px;
   }
 }
+/* FIX horizontal movement */
+
+
+/* MAIN LAYOUT MOBILE */
+@media (max-width: 768px) {
+  .main-layout {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* INNER GRID MOBILE */
+@media (max-width: 768px) {
+  .main-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* FLOW WRAP */
+@media (max-width: 768px) {
+  .flow {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
