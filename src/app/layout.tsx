@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="viewport" content="width=1200" />
+        <meta name="viewport" content="width=1200, user-scalable=no" />
       </head>
       <body>
         <Header />
