@@ -207,3 +207,16 @@ html {
 .eventsRow::-webkit-scrollbar-thumb:hover {
   background: rgba(148, 163, 184, 0.7);
 }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+}

@@ -1716,13 +1716,15 @@ const wire: React.CSSProperties = {
 
 const mainLayout = {
   display: "grid",
-  gridTemplateColumns: "300px 1fr",
+  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
   gap: 24,
   alignItems: "start",
 };
 
 const leftPanel: React.CSSProperties = {
-  position: "sticky",
+  position: typeof window !== "undefined" && window.innerWidth < 768
+    ? "static"
+    : "sticky",
   top: 20,
   height: "fit-content",
 };
