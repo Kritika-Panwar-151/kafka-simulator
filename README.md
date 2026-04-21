@@ -5,8 +5,10 @@ An interactive web application to visualize how Apache Kafka works — including
 🔗 Live Demo: https://kafka-simulator.vercel.app  
 
 
----
 
+Apache Kafka was originally developed at LinkedIn and open-sourced in 2011.  
+Today, it is widely used in large-scale, real-time systems across industries such as finance, e-commerce, and streaming platforms.
+---
 ## 📌 Why This Project?
 
 Modern systems generate massive amounts of real-time data — orders, payments, logs, notifications, and more.
