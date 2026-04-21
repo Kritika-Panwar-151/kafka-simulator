@@ -78,6 +78,15 @@ export default function SimulatorPage() {
   const [autoProduce, setAutoProduce] = useState(false);
   const [autoConsume, setAutoConsume] = useState(false);
   const [autoFollow, setAutoFollow] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const check = () => setIsMobile(window.innerWidth < 768);
+  check();
+
+  window.addEventListener("resize", check);
+  return () => window.removeEventListener("resize", check);
+}, []);
 
   const partitionIndex = ((key % TOTAL_PARTITIONS) + TOTAL_PARTITIONS) % TOTAL_PARTITIONS;
   const lag = produced - processed;
@@ -277,6 +286,12 @@ const scrollToPair = (i: number) => {
   }, [autoConsume]);
 
   /* ------------------------ UI ------------------------ */
+  const mainLayout = {
+  display: "grid",
+  gridTemplateColumns: isMobile ? "1fr" : "300px 1fr",
+  gap: 24,
+  alignItems: "start",
+};
   return (
     <div style={page}>
       <div style={container}>
@@ -429,10 +444,7 @@ const scrollToPair = (i: number) => {
         <div
   style={{
     display: "grid",
-    gridTemplateColumns:
-      typeof window !== "undefined" && window.innerWidth < 768
-        ? "1fr"
-        : "1.6fr 1fr",
+    gridTemplateColumns: isMobile ? "1fr" : "1.6fr 1fr",
     gap: 22,
     alignItems: "start",
     minWidth: 0,
@@ -1732,15 +1744,7 @@ const wire: React.CSSProperties = {
 };
 
 
-const mainLayout = {
-  display: "grid",
-  gridTemplateColumns:
-    typeof window !== "undefined" && window.innerWidth < 768
-      ? "1fr"
-      : "300px 1fr",
-  gap: 24,
-  alignItems: "start",
-};
+
 
 const leftPanel: React.CSSProperties = {
   position: typeof window !== "undefined" && window.innerWidth < 768
