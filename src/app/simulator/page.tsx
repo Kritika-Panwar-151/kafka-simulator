@@ -66,7 +66,7 @@ export default function SimulatorPage() {
     Array.from({ length: TOTAL_PARTITIONS }, () => 0)
   );
 
-  const [logs, setLogs] = useState<string[]>([]);
+  const [logs, setLogs] = useState<{ id: number; text: string }[]>([]);
   const [produced, setProduced] = useState(0);
   const [processed, setProcessed] = useState(0);
 
@@ -210,7 +210,13 @@ if (p && c && autoFollow && !willBeLast) {
 
   const addLog = (kind: "produce" | "consume" | "info", msg: string) => {
     const stamp = new Date().toLocaleTimeString();
-    setLogs((prev) => [`${kind}|${stamp}|${msg}`, ...prev].slice(0, 15));
+    setLogs((prev) => [
+  {
+    id: Date.now() + Math.random(),
+    text: `${kind}|${stamp}|${msg}`,
+  },
+  ...prev,
+].slice(0, 15));
   };
   const isVisible = (el: HTMLElement) => {
   const rect = el.getBoundingClientRect();
@@ -554,8 +560,8 @@ const scrollToPair = (i: number) => {
               <div style={{ color: "#475569" }}>No activity yet…</div>
             )}
             <AnimatePresence initial={false}>
-              {logs.map((l, i)  => {
-                const [kind, stamp, msg] = l.split("|");
+              {logs.map((l)  => {
+  const [kind, stamp, msg] = l.text.split("|");
                 const color =
                   kind === "produce"
                     ? "#a78bfa"
@@ -563,7 +569,7 @@ const scrollToPair = (i: number) => {
                     ? "#22c55e"
                     : "#64748b";
                 return (
-                  <motion.div key={l}
+                  <motion.div key={l.id}
                     initial={{ opacity: 0, x: -6 }}
                     animate={{ opacity: 1, x: 0 }}
                     style={{
