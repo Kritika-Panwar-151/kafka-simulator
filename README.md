@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Kafka Simulator
 
-## Getting Started
+An interactive web application to visualize how Apache Kafka works — including producers, partitions, consumers, offsets, and real-time event flow.
 
-First, run the development server:
+🔗 Live Demo: https://kafka-simulator.vercel.app  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📌 Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Understanding Kafka conceptually is easy — but visualizing how data actually flows is not.
 
-## Learn More
+This simulator helps you:
+- See how events are produced and routed
+- Understand partitions and key-based distribution
+- Learn how consumers read data using offsets
+- Visualize consumer lag in real time
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ⚙️ Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 🎯 Interactive simulation (produce & consume events)
+- 📊 Partition logic using key-based routing  
+  `partition = key % total_partitions`
+- 🔁 Offset tracking (next event to read)
+- 📉 Consumer lag visualization
+- 🧠 Step-by-step explanation panel
+- ⚡ Real-time UI updates
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧱 Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js (App Router)
+- React
+- Framer Motion
+- CSS / Inline styling
+- Vercel (Deployment)
+
+---
+
+## 🧠 Concepts Covered
+
+- Event Streaming
+- Producers & Consumers
+- Brokers
+- Topics & Partitions
+- Offsets
+- Data immutability in Kafka
+
+---
+
+## 🎮 How to Use
+
+1. Go to the Live Demo
+2. Enter:
+   - Event type (e.g. `order_created`)
+   - Key value
+3. Click **Produce**
+4. Observe partition assignment
+5. Click **Consume**
+6. Watch offset movement and explanation updates
+
+---
+
+## 🎯 Purpose
+
+This project was built to:
+- Make Kafka easier to understand visually
+- Demonstrate system design concepts interactively
+- Serve as a learning tool for beginners
+
+---
+
+## 📸 Preview
+
+(Add screenshots here)
+
+---
+
+## 📈 Future Improvements
+
+- Multiple consumer groups
+- Topic switching
+- Retention simulation
+- Real Kafka integration
+
+---
+
+## 📚 Learn More
+
+Official Kafka Docs:  
+https://kafka.apache.org/documentation/
+
+---
+
+## ⭐ If you found this useful
+
+Give it a star ⭐ and share it!
