@@ -586,7 +586,7 @@ const scrollToPair = (i: number) => {
                     >
                       {kind}
                     </span>
-                    <span tyle={{ 
+                    <span style={{ 
     color: "#cbd5e1",
     whiteSpace: "nowrap",
     overflow: "hidden",
