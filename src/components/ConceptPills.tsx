@@ -16,14 +16,14 @@ export default function ConceptPills() {
     <div
       style={{
     position: "sticky",
-    top: 0, // match your header height
+    top: 0, 
     zIndex: 20,
 
-    width: "100%",            // 👈 full width
+    width: "100%",            
     display: "flex",
-    justifyContent: "center", // 👈 CENTER pills
+    justifyContent: "center", 
 
-    padding: "16px 0",        // 👈 no side padding
+    padding: "16px 0",       
    
 
     borderBottom: "1px solid rgba(255,255,255,0.05)",
@@ -36,7 +36,7 @@ export default function ConceptPills() {
           key={item.id}
           onClick={() => {
   if (item.route) {
-    router.push(item.route); // 🚀 go to simulator page
+    router.push(item.route); 
   } else {
     document
       .getElementById(item.id)

@@ -6,7 +6,7 @@ import Concepts from "@/components/learn/Concepts";
 
 import ConceptPills from "@/components/ConceptPills";
 import Divider from "@/components/ui/Divider";
-import SectionNav from "@/components/ui/SectionNav";
+
 
 export default function Home() {
   return (

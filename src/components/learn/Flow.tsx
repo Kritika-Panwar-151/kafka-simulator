@@ -103,10 +103,10 @@ function FlowLine() {
         }}
         style={{
           position: "absolute",
-          width: "60%", // 🔥 bigger = smoother travel
+          width: "60%", 
           height: "100%",
           background: "#a78bfa",
-          filter: "blur(2px)", // optional nice glow
+          filter: "blur(2px)", 
         }}
       />
     </div>

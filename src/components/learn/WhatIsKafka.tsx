@@ -43,13 +43,13 @@ color: "#f1f5f9",
   It enables systems to send, store, and process events in a reliable and scalable way.
 </p>
 
-{/* SUPPORT (grouped, tighter) */}
+{/* SUPPORTING POINTS */}
 <div style={{
   marginTop: "24px",
   maxWidth: "750px",
   marginInline: "auto",
    color: "#d1d9ff", 
-fontSize: "17px",   // slightly bigger for readability
+fontSize: "17px",   
   lineHeight: 1.7,
 }}>
   <p>

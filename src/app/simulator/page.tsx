@@ -16,11 +16,6 @@ import {
   Zap,
 } from "lucide-react";
 
-/* ------------------------------------------------------------------ */
-/*  KAFKA SIMULATOR                                                   */
-/*  Same structure you wrote — polished UI, deeper explanations,      */
-/*  offset pointer, read/unread states, auto-run toggles              */
-/* ------------------------------------------------------------------ */
 
 const TOTAL_PARTITIONS = 3;
 const EVENT_OPTIONS = [
@@ -87,7 +82,7 @@ export default function SimulatorPage() {
   const partitionIndex = ((key % TOTAL_PARTITIONS) + TOTAL_PARTITIONS) % TOTAL_PARTITIONS;
   const lag = produced - processed;
 
-  /* Keep refs for interval-driven actions */
+  
   const partitionsRef = useRef(partitions);
   const offsetsRef = useRef(offsets);
    useEffect(() => {
@@ -221,7 +216,7 @@ if (p && c && autoFollow && !willBeLast) {
   const rect = el.getBoundingClientRect();
 
   return (
-    rect.top >= 120 &&   // header space
+    rect.top >= 120 &&  
     rect.bottom <= window.innerHeight - 80
   );
 };
@@ -231,7 +226,7 @@ const scrollToPair = (i: number) => {
 
   if (!p || !c) return;
 
-  // ✅ NEW: stop unnecessary scroll
+  
   if (isVisible(p) && isVisible(c)) return;
 
   const pTop = p.getBoundingClientRect().top + window.scrollY;
@@ -423,7 +418,7 @@ const scrollToPair = (i: number) => {
     gridTemplateColumns: "1.6fr 1fr",
     gap: 22,
     alignItems: "start",
-    minWidth: 0,   // 👈 VERY IMPORTANT
+    minWidth: 0,  
   }}
 >
           {/* LEFT */}
@@ -603,9 +598,9 @@ const scrollToPair = (i: number) => {
   );
 }
 
-/* =================================================================== */
-/*  STATS                                                              */
-/* =================================================================== */
+
+/*  STATS*/
+
 
 function StatsTiles({
   produced,
@@ -671,9 +666,9 @@ function TileDivider() {
   return <div style={{ width: 1, height: 36, background: "#1e293b" }} />;
 }
 
-/* =================================================================== */
-/*  PARTITION                                                          */
-/* =================================================================== */
+
+/*  PARTITION*/
+
 
 function PartitionCard({
   index,
@@ -699,16 +694,16 @@ function PartitionCard({
 
 useEffect(() => {
   if (!rowRef.current) return;
-  if (!autoFollow) return;   // ✅ correct place
+  if (!autoFollow) return;   
 
   if (events.length > prevLength.current) {
-    // PRODUCE → scroll to end
+   
     rowRef.current.scrollTo({
       left: rowRef.current.scrollWidth,
       behavior: "smooth",
     });
   } else {
-    // CONSUME → scroll to offset
+   
     const child = rowRef.current.children[offset] as HTMLElement;
     child?.scrollIntoView({
       behavior: "smooth",
@@ -840,9 +835,8 @@ useEffect(() => {
   );
 }
 
-/* =================================================================== */
-/*  CONSUMER                                                           */
-/* =================================================================== */
+/*  CONSUMER */
+
 
 function ConsumerRow({
   index,
@@ -910,9 +904,9 @@ function ConsumerRow({
   );
 }
 
-/* =================================================================== */
-/*  EXPLANATION                                                        */
-/* =================================================================== */
+
+/*  EXPLANATION*/
+
 
 function ExplanationPanel({ data }: { data: Explanation }) {
   if (!data) {
@@ -1079,9 +1073,9 @@ function Dim({ children }: { children: React.ReactNode }) {
   );
 }
 
-/* =================================================================== */
-/*  FLOW                                                               */
-/* =================================================================== */
+
+/*  FLOW */
+
 
 function Flow({
   activeProduce,
@@ -1224,9 +1218,9 @@ function Wire({
   );
 }
 
-/* =================================================================== */
-/*  PRIMITIVES                                                         */
-/* =================================================================== */
+
+/*  PRIMITIVES  */
+
 
 function Field({
   label,
@@ -1269,17 +1263,17 @@ function AutoToggle({
       style={{
   display: "flex",
   alignItems: "center",
-  justifyContent: "center",   // 👈 center content
-  gap: 6,                     // 👈 tighter
-  padding: "6px 10px",        // 👈 smaller button
+  justifyContent: "center",  
+  gap: 6,                    
+  padding: "6px 10px",        
   borderRadius: 999,
   border: `1px dashed ${active ? color : "#1e293b"}`,
   background: active ? `${color}15` : "transparent",
   color: active ? color : "#64748b",
-  fontSize: 11,               // 👈 smaller text
+  fontSize: 11,              
   cursor: "pointer",
   fontFamily: "inherit",
-  minWidth: 110,              // 👈 FIXED width (VERY IMPORTANT)
+  minWidth: 110,              
 }}
     >
       {active ? <Pause size={12} /> : <Play size={12} />}
@@ -1300,9 +1294,9 @@ function AutoToggle({
   );
 }
 
-/* =================================================================== */
-/*  STYLES                                                             */
-/* =================================================================== */
+
+/*  STYLES */
+
 
 const page: React.CSSProperties = {
   background: "radial-gradient(circle at top, #0b1220, #020617 70%)",
@@ -1313,7 +1307,7 @@ const page: React.CSSProperties = {
 };
 
 const container: React.CSSProperties = {
-  maxWidth: "1500px",   // 👈 important
+  maxWidth: "1500px",   
   margin: "0 auto",
   padding: "0 16px",
   display: "flex",
@@ -1420,7 +1414,7 @@ const controlsRow: React.CSSProperties = {
 const autoRow: React.CSSProperties = {
   display: "flex",
   alignItems: "center",
-  justifyContent: "space-between", // 👈 key fix
+  justifyContent: "space-between", 
   gap: 16,
   marginTop: 16,
   paddingTop: 14,
@@ -1502,7 +1496,7 @@ const col: React.CSSProperties = {
   display: "flex",
   flexDirection: "column",
   gap: 22,
-  minWidth: 0,   // 👈 CRITICAL FIX
+  minWidth: 0,   
 };
 
 const partitionBox: React.CSSProperties = {
@@ -1512,7 +1506,7 @@ const partitionBox: React.CSSProperties = {
   background: "#020617",
 
   width: "100%",
-  overflow: "hidden",   // 👈 prevents expansion
+  overflow: "hidden",   
 };
 
 const partitionHead: React.CSSProperties = {
@@ -1738,4 +1732,4 @@ const rightPanel = {
   top: 20,
   height: "fit-content",
 };
-/* hide scrollbar by default */
+

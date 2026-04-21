@@ -180,7 +180,7 @@ section {
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px; /* 👈 THIS FIXES OFFSET */
+  scroll-padding-top: 100px;
 }
 .eventsRow::-webkit-scrollbar {
   height: 6px;
