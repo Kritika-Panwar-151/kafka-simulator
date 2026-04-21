@@ -8,6 +8,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=1200" />
+      </head>
       <body>
         <Header />
         {children}
