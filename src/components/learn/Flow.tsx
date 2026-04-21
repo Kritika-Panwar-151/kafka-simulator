@@ -27,7 +27,7 @@ export default function Flow() {
           style={{
             marginTop: "80px",
             display: "flex",
-            flexWrap: "wrap",
+            
             alignItems: "center",
             justifyContent: "center",
             gap: "20px",

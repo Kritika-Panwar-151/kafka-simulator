@@ -195,8 +195,17 @@ if (p && c && autoFollow && !willBeLast) {
   };
 
   const reset = () => {
-    setPartitions(Array.from({ length: TOTAL_PARTITIONS }, () => []));
-    setOffsets(Array.from({ length: TOTAL_PARTITIONS }, () => 0));
+  setAutoProduce(false);
+  setAutoConsume(false);
+  setScrollTarget(null); // ✅ IMPORTANT
+
+  requestAnimationFrame(() => {
+    setPartitions(() =>
+      Array.from({ length: TOTAL_PARTITIONS }, () => [])
+    );
+    setOffsets(() =>
+      Array.from({ length: TOTAL_PARTITIONS }, () => 0)
+    );
     setLogs([]);
     setProduced(0);
     setProcessed(0);
@@ -204,9 +213,8 @@ if (p && c && autoFollow && !willBeLast) {
     setActiveProduce(null);
     setActiveConsume(null);
     setHighlightEventId(null);
-    setAutoProduce(false);
-    setAutoConsume(false);
-  };
+  });
+};
 
   const addLog = (kind: "produce" | "consume" | "info", msg: string) => {
     const stamp = new Date().toLocaleTimeString();
@@ -454,7 +462,7 @@ const scrollToPair = (i: number) => {
 }} key={i}>
                   <PartitionCard
                   
-                    key={i}
+                   
                     index={i}
                     events={p}
                     offset={offsets[i]}
