@@ -415,10 +415,13 @@ const scrollToPair = (i: number) => {
         <div
   style={{
     display: "grid",
-    gridTemplateColumns: "1.6fr 1fr",
+    gridTemplateColumns:
+      typeof window !== "undefined" && window.innerWidth < 768
+        ? "1fr"
+        : "1.6fr 1fr",
     gap: 22,
     alignItems: "start",
-    minWidth: 0,  
+    minWidth: 0,
   }}
 >
           {/* LEFT */}
@@ -1716,7 +1719,10 @@ const wire: React.CSSProperties = {
 
 const mainLayout = {
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+  gridTemplateColumns:
+    typeof window !== "undefined" && window.innerWidth < 768
+      ? "1fr"
+      : "300px 1fr",
   gap: 24,
   alignItems: "start",
 };
