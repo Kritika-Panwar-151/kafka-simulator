@@ -4,10 +4,10 @@ An interactive web application to visualize how Apache Kafka works — including
 
 🔗 Live Demo: https://kafka-simulator.vercel.app  
 
+---
 
-
-Apache Kafka was originally developed at LinkedIn and open-sourced in 2011.  
-Today, it is widely used in large-scale, real-time systems across industries such as finance, e-commerce, and streaming platforms.
+> Apache Kafka was originally developed at LinkedIn and open-sourced in 2011.  
+> Today, it is widely used in large-scale, real-time systems across industries such as finance, e-commerce, and streaming platforms.
 ---
 ## 📌 Why This Project?
 
@@ -24,16 +24,6 @@ Handling this data efficiently is challenging:
 However, Kafka concepts like **partitions, offsets, and consumer lag are difficult to understand without visualization.**
 
 👉 This project was built to make Kafka **intuitive, visual, and easy to grasp**.
-
----
-
-## 📌 What is Kafka (in simple terms)?
-
-Kafka is a **distributed event streaming platform** that:
-- Stores data as a continuous stream of events
-- Allows multiple systems to read the same data independently
-- Scales horizontally to handle high throughput
-- Ensures durability and fault tolerance
 
 ---
 
@@ -105,11 +95,6 @@ This simulator helps you understand:
 
 ---
 
-## 📸 Preview
-
-(Add screenshots here)
-
----
 
 ## 📈 Future Improvements
 
@@ -125,8 +110,4 @@ This simulator helps you understand:
 Official Kafka Documentation:  
 https://kafka.apache.org/documentation/
 
----
 
-## ⭐ If you found this useful
-
-Give it a star ⭐ and share it!
