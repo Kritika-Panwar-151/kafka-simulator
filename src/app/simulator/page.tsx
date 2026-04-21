@@ -1326,6 +1326,7 @@ const page: React.CSSProperties = {
   padding: "48px 20px 80px",
   color: "#e2e8f0",
   fontFamily: "ui-sans-serif, system-ui, -apple-system",
+  
 };
 
 const container: React.CSSProperties = {
