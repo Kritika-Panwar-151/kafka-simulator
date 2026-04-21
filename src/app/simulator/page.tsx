@@ -560,7 +560,7 @@ const scrollToPair = (i: number) => {
                     ? "#22c55e"
                     : "#64748b";
                 return (
-                  <motion.div key={`${l}-${i}`}
+                  <motion.div key={l}
                     initial={{ opacity: 0, x: -6 }}
                     animate={{ opacity: 1, x: 0 }}
                     style={{
@@ -586,7 +586,12 @@ const scrollToPair = (i: number) => {
                     >
                       {kind}
                     </span>
-                    <span style={{ color: "#cbd5e1" }}>{msg}</span>
+                    <span tyle={{ 
+    color: "#cbd5e1",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+  }}>{msg}</span>
                   </motion.div>
                 );
               })}
@@ -1681,7 +1686,8 @@ const logBox: React.CSSProperties = {
   flexDirection: "column",
   gap: 4,
   maxHeight: 220,
-  overflow: "auto",
+  overflowY: "auto",
+  overflowX: "hidden",
 };
 
 const flow: React.CSSProperties = {
